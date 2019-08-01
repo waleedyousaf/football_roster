@@ -1,11 +1,9 @@
 class AuthAction {
     constructor(){
-
         this.authenticated = localStorage.hasOwnProperty("user")
     }
 
-    login(cb){
-        console.log("In authActions!!")
+    login(callBackPushHistory){
         if(localStorage.hasOwnProperty("user")){
             let user = JSON.parse(localStorage.getItem('user'))
             let token = user.access_token
@@ -13,7 +11,7 @@ class AuthAction {
                 console.log("In this.authenticated BEFORE: ",this.authenticated)
                 this.authenticated = true
                 console.log("In this.authenticated AFTER: ",this.authenticated)
-                cb()
+                callBackPushHistory()
             }
         }
         else {
@@ -21,10 +19,10 @@ class AuthAction {
         }
     }
 
-    logout(cb){
+    logout(callBackPushHistory){
         localStorage.removeItem('user')
         this.authenticated = false
-        cb()
+        callBackPushHistory()
     }
 
     isAuthenticated(){
