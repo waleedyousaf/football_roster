@@ -1,54 +1,37 @@
 import React, {Component} from 'react'
-import {putPlayer} from "../actions/playerAction";
 import {connect} from "react-redux";
-// import axios from 'axios'
-//import {Link} from 'react-router-dom'
-//import { connect } from 'react-redux'
-//import {fetchPlayer, selectPlayer, postPlayer} from "../actions/playerAction";
+import {putPlayer} from "../actions/playerAction";
 
 class EditPlayerView extends Component {
-
     constructor(props){
         super(props);
-
         this.onChangePlayerName = this.onChangePlayerName.bind(this);
         this.onChangePlayerBio = this.onChangePlayerBio.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
-
         this.state = {
             player_name: this.props.selectedPlayer.name,
             player_bio: this.props.selectedPlayer.bio
         }
     }
 
-    componentDidMount() {
-        // console.log("In componentDidMount of EditPlayerView!")
-        // console.log('Player Seleceted: ',this.props.selectedPlayer)
-        // console.log(newPlayer)
-
-        // this.props.postPlayer(newPlayer)
-    }
-
-    onChangePlayerName(e){
+    onChangePlayerName(event){
         this.setState({
-            player_name: e.target.value
+            player_name: event.target.value
         })
     }
 
-    onChangePlayerBio(e){
+    onChangePlayerBio(event){
         this.setState({
-            player_bio: e.target.value
+            player_bio: event.target.value
         })
     }
 
-    onSubmit(e){
-        //console.log("In onSubmit of EditPlayerView")
-        e.preventDefault();
+    onSubmit(event){
+        event.preventDefault();
         const updatedPlayer = {
             name: this.state.player_name,
             bio: this.state.player_bio
         }
-
         this.props.putPlayer(updatedPlayer,this.props.selectedPlayer)
         this.props.history.push('/');
     }
@@ -83,17 +66,14 @@ class EditPlayerView extends Component {
     }
 }
 
-
 const mapStateToProps = (state) => {
     return {
         selectedPlayer: state.selectedPlayer
     }
 }
 
-
 const mapDispatchToProps = (dispatch) => ({
     putPlayer: (updatedPlayer, selectedPlayer) => dispatch(putPlayer(updatedPlayer,selectedPlayer))
 })
 
-// export default AddPlayerView
 export default connect(mapStateToProps,mapDispatchToProps)(EditPlayerView)
