@@ -5,6 +5,7 @@ import React, {Component} from 'react'
 import { connect } from 'react-redux'
 import {postPlayer} from "../actions/playerAction";
 import Button from "react-bootstrap/Button";
+import authAction from "../actions/authAction";
 
 
 class AddPlayerView extends Component {
@@ -46,16 +47,6 @@ class AddPlayerView extends Component {
         })
     }
 
-    //without standards of v4
-    myUuidGenerator() {
-        function s4() {
-            return Math.floor((1 + Math.random()) * 0x10000)
-                .toString(16)
-                .substring(1);
-        }
-        return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
-            s4() + '-' + s4() + s4() + s4();
-    }
 
     onSubmit(e) {
         e.preventDefault();
@@ -170,8 +161,10 @@ class AddPlayerView extends Component {
                     <div className="form-group">
                         <input type="submit" value="Add Player" className="btn btn-primary" />
                         <Button onClick={() =>{
-                            this.props.history("/")
-                        }}></Button>
+                            authAction.logout(() =>{
+                                this.props.history.push("/")
+                            })
+                        }}>LogOut</Button>
                     </div>
                 </form>
             </div>

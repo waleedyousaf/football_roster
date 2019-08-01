@@ -116,25 +116,6 @@ class LoginView extends Component {
                     <div className="form-group">
                         <input type="submit" value="Log In" className="btn btn-primary" />
                     </div>
-                    <Grid item>
-                        <ClickAwayListener onClickAway={this.handleTooltipClose}>
-                            <div>
-                                <Tooltip
-                                    PopperProps={{
-                                        disablePortal: true,
-                                    }}
-                                    onClose={this.handleTooltipClose}
-                                    open={this.state.open}
-                                    disableFocusListener
-                                    disableHoverListener
-                                    disableTouchListener
-                                    title="Add"
-                                >
-                                    <Button onClick={this.handleTooltipOpen}>Click</Button>
-                                </Tooltip>
-                            </div>
-                        </ClickAwayListener>
-                    </Grid>
                 </form>
             </div>
         )

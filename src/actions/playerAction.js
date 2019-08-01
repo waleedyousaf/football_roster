@@ -72,7 +72,9 @@ export function getAuthUser(user){
 }
 
 export const mylogin = () => {
+    console.log("In actions mylogin")
     auth.login(() => {
+        console.log("In auth.login")
         //this.props.history.push('/')
     })
 }

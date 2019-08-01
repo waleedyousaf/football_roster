@@ -4,7 +4,7 @@ import authAction from "../actions/authAction";
 
 export const ProtectedRoute = ({component: Component, ...rest}) => {
     return (
-        <Route {...rest} render{
+        <Route {...rest} render={
             (props) => {
                 if (authAction.isAuthenticated()){
                     return <Component {...props}/>
