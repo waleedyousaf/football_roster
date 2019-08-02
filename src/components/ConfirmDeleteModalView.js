@@ -1,15 +1,13 @@
-import React from 'react'
 import { Modal, Button } from 'react-bootstrap';
+import React from 'react'
 
 const ConfirmDeleteModalView = (props) => {
-    //console.log("Props.onHide is: ",props.onHide,'And props.confirm_delete',props.confirmdel)
     return (
         <Modal
             {...props}
             size="lg"
             aria-labelledby="contained-modal-title-vcenter"
             centered
-            // style={{width:'25em'}}
         >
             <Modal.Header closeButton>
                 <Modal.Title id="contained-modal-title-vcenter">

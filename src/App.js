@@ -1,18 +1,17 @@
-import React, {Component} from "react";
 import "bootstrap/dist/css/bootstrap.min.css"
-import NavbarView from "./components/NavbarView";
+import React, {Component} from "react";
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import NavbarView from "./components/NavbarView";
 import HomeView from "./components/HomeView";
-import AddPlayerView from "./components/AddPlayerView";
 import PlayerDetailView from "./components/PlayerDetailView";
-import EditPlayerView from "./components/EditPlayerView";
 import SignUpView from "./components/SignUpView";
 import LoginView from "./components/LoginView";
+import AddPlayerView from "./components/AddPlayerView";
+import EditPlayerView from "./components/EditPlayerView";
 import ToolTipViewTest from "./components/ToolTipViewTest";
 import {ProtectedRoute} from "./components/ProtectedRoute";
 
 class App extends Component {
-
     render() {
     return (
         <BrowserRouter>
@@ -27,7 +26,6 @@ class App extends Component {
                     <Route exact path='/:player_id' component={PlayerDetailView} ></Route>
                     <Route exact path='/edit/:player_id' component={EditPlayerView} ></Route>
                 </Switch>
-                {/*{this.state.players}*/}
             </div>
         </BrowserRouter>
     );

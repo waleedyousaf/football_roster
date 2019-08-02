@@ -1,26 +1,25 @@
+import {checkUserInLocalStorage, getUserFromLocalStorage, removeUserFromLocalStorage} from "../globalFunctions";
+
 class AuthAction {
     constructor(){
-        this.authenticated = false
+        this.authenticated = checkUserInLocalStorage()
     }
 
-    login(cb){
-        if(localStorage.hasOwnProperty("user")){
-            let user = JSON.parse(localStorage.getItem('user'))
+    login(callBackPushHistory){
+        if(checkUserInLocalStorage()){
+            let user = getUserFromLocalStorage()
             let token = user.access_token
             if(token){
                 this.authenticated = true
-                cb()
+                callBackPushHistory()
             }
-        }
-        else {
-            console.log("hasOwnProperty: FALSE")
         }
     }
 
-    logout(cb){
-        localStorage.removeItem('user')
+    logout(callBackPushHistory){
+        removeUserFromLocalStorage()
         this.authenticated = false
-        cb()
+        callBackPushHistory()
     }
 
     isAuthenticated(){
