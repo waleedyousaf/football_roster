@@ -1,7 +1,7 @@
-import React, {Component} from 'react'
-import {connect} from 'react-redux'
 import { Button } from 'react-bootstrap';
 import Pokeball from "../pokeball.jpg";
+import React, {Component} from 'react'
+import {connect} from 'react-redux'
 import {deletePlayer} from '../actions/playerAction'
 import ConfirmDeleteModalView from "./ConfirmDeleteModalView";
 

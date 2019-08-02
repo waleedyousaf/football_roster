@@ -1,6 +1,6 @@
+import Pokeball from "../pokeball.jpg";
 import React from 'react'
 import { Link, NavLink, withRouter } from 'react-router-dom'
-import Pokeball from "../pokeball.jpg";
 
 const NavbarView = (props) => {
     return (

@@ -1,5 +1,5 @@
-import React from 'react'
 import { Modal, Button } from 'react-bootstrap';
+import React from 'react'
 
 const ConfirmDeleteModalView = (props) => {
     return (

@@ -1,6 +1,6 @@
+import "bootstrap/dist/css/bootstrap.min.css"
 import React, {Component} from "react";
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
-import "bootstrap/dist/css/bootstrap.min.css"
 import NavbarView from "./components/NavbarView";
 import HomeView from "./components/HomeView";
 import PlayerDetailView from "./components/PlayerDetailView";

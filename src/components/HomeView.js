@@ -1,9 +1,9 @@
+import {Button} from 'react-bootstrap'
+import Pokeball from "../pokeball.jpg"
 import React, {Component} from 'react'
 import { connect } from 'react-redux'
 import {Link} from 'react-router-dom'
 import {fetchPlayer, selectPlayer} from '../actions/playerAction'
-import Pokeball from "../pokeball.jpg"
-import {Button} from 'react-bootstrap'
 
 class HomeView extends Component {
     componentDidMount() {

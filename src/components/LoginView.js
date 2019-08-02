@@ -20,20 +20,6 @@ class LoginView extends Component {
         this.setState({
             user_name: event.target.value
         })
-        if (this.verifyUserName(event.target.value)){
-            console.log("UserNameVerified!!")
-        }
-        else {
-            console.log("UserNameNOTVerified!!")
-        }
-    }
-
-    verifyUserName(username){
-        console.log("In verify func")
-        if (username.length >=4){
-            return true
-        }
-        else return false
     }
 
     onChangeUserPass(event){

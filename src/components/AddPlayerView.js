@@ -1,6 +1,6 @@
+import Button from "react-bootstrap/Button";
 import React, {Component} from 'react'
 import { connect } from 'react-redux'
-import Button from "react-bootstrap/Button";
 import {postPlayer} from "../actions/playerAction";
 import authAction from "../actions/authAction";
 
